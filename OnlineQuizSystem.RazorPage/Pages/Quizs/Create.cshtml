@@ -1,0 +1,158 @@
+﻿@page
+@model OnlineQuizSystem.RazorPage.Pages.Quizs.CreateModel
+@{
+    ViewData["Title"] = "Create Quiz";
+}
+
+<div class="container py-4">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h1 class="h3 mb-0">Create New Quiz</h1>
+        </div>
+        <div class="card-body">
+            <form method="post" id="quizForm">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <!-- Hidden UserId -->
+                <input type="hidden" asp-for="QuizRequest.UserId" />
+
+                <div class="row">
+                    <!-- Quiz Title -->
+                    <div class="col-md-8 mb-3">
+                        <label asp-for="QuizRequest.Title" class="form-label fw-bold">Quiz Title</label>
+                        <input asp-for="QuizRequest.Title" class="form-control form-control-lg" placeholder="Enter an engaging title for your quiz" />
+                        <span asp-validation-for="QuizRequest.Title" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <!-- Quiz Description -->
+                <div class="mb-4">
+                    <label asp-for="QuizRequest.Description" class="form-label fw-bold">Description (Optional)</label>
+                    <textarea asp-for="QuizRequest.Description" class="form-control" rows="3" placeholder="Provide instructions or context for quiz takers"></textarea>
+                    <span asp-validation-for="QuizRequest.Description" class="text-danger"></span>
+                </div>
+
+                <!-- Questions Section -->
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h3 class="h4 mb-0">Questions</h3>
+                    <button type="button" class="btn btn-success" onclick="addQuestion()">
+                        <i class="bi bi-plus-circle me-1"></i> Add Question
+                    </button>
+                </div>
+
+                <div id="questions-container" class="mb-4">
+                    <!-- Dynamic questions will be added here -->
+                </div>
+
+                <!-- Submit Buttons -->
+                <div class="d-flex justify-content-between mt-4">
+                    <a asp-page="./Index" class="btn btn-outline-secondary">
+                        <i class="bi bi-arrow-left"></i> Back to Quizzes
+                    </a>
+                    <input type="submit" value="Create Quiz" class="btn btn-primary px-4 py-2" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <!-- Client-side validation -->
+    <partial name="_ValidationScriptsPartial" />
+
+    <!-- Add Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <script>
+        let questionCounter = 0;
+
+        // Function to add a new question
+        function addQuestion() {
+            questionCounter++;
+            const questionHtml = `
+                <div class="question-block mb-4 p-4 border rounded shadow-sm" id="question-${questionCounter}">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="text-primary mb-0">Question ${questionCounter}</h4>
+                        <button type="button" class="btn btn-outline-danger btn-sm" onclick="removeQuestion(${questionCounter})">
+                            <i class="bi bi-trash"></i> Remove
+                        </button>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <input type="text" name="QuizRequest.Questions[${questionCounter - 1}].QuestionText"
+                               class="form-control form-control-lg" placeholder="Enter your question here" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Answer Options</label>
+                        <div class="row">
+                            <div class="col-md-6 mb-2">
+                                <input type="text" name="QuizRequest.Questions[${questionCounter - 1}].AnswerA"
+                                       class="form-control" placeholder="Answer A" required />
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <input type="text" name="QuizRequest.Questions[${questionCounter - 1}].AnswerB"
+                                       class="form-control" placeholder="Answer B" required />
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <input type="text" name="QuizRequest.Questions[${questionCounter - 1}].AnswerC"
+                                       class="form-control" placeholder="Answer C" required />
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <input type="text" name="QuizRequest.Questions[${questionCounter - 1}].AnswerD"
+                                       class="form-control" placeholder="Answer D" required />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label fw-bold">Correct Answer</label>
+                        <select name="QuizRequest.Questions[${questionCounter - 1}].AnswerCorrect"
+                                class="form-select" required>
+                            <option value="" disabled selected>Select correct answer</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
+                        </select>
+                    </div>
+                </div>`;
+            document.getElementById('questions-container').insertAdjacentHTML('beforeend', questionHtml);
+        }
+
+        // Function to remove a question
+        function removeQuestion(questionId) {
+            if (document.querySelectorAll('.question-block').length <= 1) {
+                alert("You need at least one question in your quiz.");
+                return;
+            }
+
+            if (confirm("Are you sure you want to remove this question?")) {
+                const questionElement = document.getElementById(`question-${questionId}`);
+                if (questionElement) {
+                    questionElement.remove();
+                }
+            }
+        }
+
+        // Add the first question by default on page load
+        window.onload = function () {
+            addQuestion();
+        };
+    </script>
+
+    <style>
+        .question-block {
+            background-color: #f8f9fa;
+            transition: all 0.3s ease;
+        }
+
+            .question-block:hover {
+                box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1) !important;
+            }
+
+        .form-select {
+            max-width: 200px;
+        }
+    </style>
+}

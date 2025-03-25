@@ -1,0 +1,14 @@
+D:\Project\Assignment_PRN222\OnlineQuiz\OnlineQuiz.Repository\bin\Debug\net8.0\OnlineQuiz.Repository.deps.json
+D:\Project\Assignment_PRN222\OnlineQuiz\OnlineQuiz.Repository\bin\Debug\net8.0\OnlineQuiz.Repository.runtimeconfig.json
+D:\Project\Assignment_PRN222\OnlineQuiz\OnlineQuiz.Repository\bin\Debug\net8.0\OnlineQuiz.Repository.dll
+D:\Project\Assignment_PRN222\OnlineQuiz\OnlineQuiz.Repository\bin\Debug\net8.0\OnlineQuiz.Repository.pdb
+D:\Project\Assignment_PRN222\OnlineQuiz\OnlineQuiz.Repository\obj\Debug\net8.0\OnlineQuiz.Repository.csproj.AssemblyReference.cache
+D:\Project\Assignment_PRN222\OnlineQuiz\OnlineQuiz.Repository\obj\Debug\net8.0\OnlineQuiz.Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\Assignment_PRN222\OnlineQuiz\OnlineQuiz.Repository\obj\Debug\net8.0\OnlineQuiz.Repository.AssemblyInfoInputs.cache
+D:\Project\Assignment_PRN222\OnlineQuiz\OnlineQuiz.Repository\obj\Debug\net8.0\OnlineQuiz.Repository.AssemblyInfo.cs
+D:\Project\Assignment_PRN222\OnlineQuiz\OnlineQuiz.Repository\obj\Debug\net8.0\OnlineQuiz.Repository.csproj.CoreCompileInputs.cache
+D:\Project\Assignment_PRN222\OnlineQuiz\OnlineQuiz.Repository\obj\Debug\net8.0\OnlineQuiz.Repository.dll
+D:\Project\Assignment_PRN222\OnlineQuiz\OnlineQuiz.Repository\obj\Debug\net8.0\refint\OnlineQuiz.Repository.dll
+D:\Project\Assignment_PRN222\OnlineQuiz\OnlineQuiz.Repository\obj\Debug\net8.0\OnlineQuiz.Repository.pdb
+D:\Project\Assignment_PRN222\OnlineQuiz\OnlineQuiz.Repository\obj\Debug\net8.0\OnlineQuiz.Repository.genruntimeconfig.cache
+D:\Project\Assignment_PRN222\OnlineQuiz\OnlineQuiz.Repository\obj\Debug\net8.0\ref\OnlineQuiz.Repository.dll

@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Service\IService\ỈoomService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="BusinessModel\NewFile1.txt" />
+    <None Remove="Service\IService\NewFile1.txt" />
+    <None Remove="Service\NewFile1.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OnlineQuiz.Repository\OnlineQuiz.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

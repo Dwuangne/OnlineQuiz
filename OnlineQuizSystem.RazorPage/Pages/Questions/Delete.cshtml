@@ -1,0 +1,76 @@
+﻿@page "{id:int}"
+@model OnlineQuizSystem.RazorPage.Pages.Questions.DeleteModel
+@{
+    ViewData["Title"] = "Delete Question";
+}
+
+<div class="container py-4">
+    <div class="card shadow-sm">
+        <div class="card-header bg-danger text-white">
+            <h1 class="h3 mb-0">Delete Question</h1>
+        </div>
+        <div class="card-body">
+            <div class="alert alert-warning" role="alert">
+                <i class="bi bi-exclamation-triangle me-2"></i>
+                Are you sure you want to delete this question? This action cannot be undone.
+            </div>
+
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group mb-3">
+                    <label class="form-label fw-bold">Question Text</label>
+                    <input type="text" class="form-control" value="@Model.QuestionRequest.QuestionText" readonly />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Answer Options</label>
+                    <div class="row">
+                        <div class="col-md-6 mb-2">
+                            <label class="form-label">Answer A</label>
+                            <input type="text" class="form-control" value="@Model.QuestionRequest.AnswerA" readonly />
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <label class="form-label">Answer B</label>
+                            <input type="text" class="form-control" value="@Model.QuestionRequest.AnswerB" readonly />
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <label class="form-label">Answer C</label>
+                            <input type="text" class="form-control" value="@Model.QuestionRequest.AnswerC" readonly />
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <label class="form-label">Answer D</label>
+                            <input type="text" class="form-control" value="@Model.QuestionRequest.AnswerD" readonly />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label class="form-label fw-bold">Correct Answer</label>
+                    <input type="text" class="form-control" value="@Model.QuestionRequest.AnswerCorrect" readonly />
+                </div>
+
+                <!-- Submit Buttons -->
+                <div class="d-flex justify-content-end mt-4">
+                    <button type="submit" class="btn btn-danger px-4 py-2" onclick="return confirm('Are you sure you want to delete this question?');">
+                        <i class="bi bi-trash me-1"></i> Delete
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <!-- Client-side validation -->
+    <partial name="_ValidationScriptsPartial" />
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <style>
+        .form-control[readonly] {
+            background-color: #e9ecef;
+        }
+    </style>
+}

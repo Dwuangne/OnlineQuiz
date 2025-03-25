@@ -1,0 +1,33 @@
+﻿@page
+@model OnlineQuizSystem.RazorPage.Pages.Auth.LoginModel
+@{
+}
+
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="card shadow p-4" style="width: 400px;">
+        <h2 class="text-center mb-4">Login</h2>
+
+        @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+        {
+            <div class="alert alert-danger">@Model.ErrorMessage</div>
+        }
+
+        <form method="post">
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" asp-for="LoginRequest.EmailAddress" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" class="form-control" asp-for="LoginRequest.Password" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+        </form>
+
+        <p class="text-center mt-3">
+            Don't have an account? <a href="/Auth/Register">Register</a>
+        </p>
+    </div>
+</div>

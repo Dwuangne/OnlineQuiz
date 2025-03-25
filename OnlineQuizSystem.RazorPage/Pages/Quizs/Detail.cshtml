@@ -1,0 +1,64 @@
+﻿@page
+@model OnlineQuizSystem.RazorPage.Pages.Quizs.DetailModel
+@{
+    ViewData["Title"] = "Quiz Details";
+}
+
+<div class="container py-4">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h1 class="h3 mb-0">Quiz Details</h1>
+        </div>
+        <div class="card-body">
+            @if (Model.QuizResponse != null)
+            {
+                <h3 class="text-secondary">@Model.QuizResponse.Title</h3>
+                <p class="text-muted">@Model.QuizResponse.Description</p>
+                <p><strong>Created At:</strong> @Model.QuizResponse.CreatedAt?.ToString("yyyy-MM-dd HH:mm")</p>
+
+                <h4 class="mt-4">Questions</h4>
+                <div id="questions-container">
+                    @if (Model.QuizResponse.Questions.Any())
+                    {
+                        @foreach (var question in Model.QuizResponse.Questions.Select((q, i) => new { Question = q, Index = i }))
+                        {
+                            <div class="question-block mb-4 p-4 border rounded shadow-sm" id="question-@question.Index">
+                                <h5 class="text-primary">Question @(question.Index + 1): @question.Question.QuestionText</h5>
+                                <ul class="list-group mt-3">
+                                    <li class="list-group-item">A: @question.Question.AnswerA</li>
+                                    <li class="list-group-item">B: @question.Question.AnswerB</li>
+                                    <li class="list-group-item">C: @question.Question.AnswerC</li>
+                                    <li class="list-group-item">D: @question.Question.AnswerD</li>
+                                </ul>
+                                <p class="mt-2 text-success"><strong>Correct Answer:</strong> @question.Question.AnswerCorrect</p>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <p class="text-muted">No questions found for this quiz.</p>
+                    }
+                </div>
+
+                <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
+            }
+            else
+            {
+                <p class="text-danger">Quiz not found.</p>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <style>
+        .question-block {
+            background-color: #f8f9fa;
+            transition: all 0.3s ease;
+        }
+
+            .question-block:hover {
+                box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1) !important;
+            }
+    </style>
+}
