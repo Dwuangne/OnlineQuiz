@@ -14,5 +14,6 @@ namespace OnlineQuiz.Service.Service.IService
         Task<Room> InsertAsync(RoomBusiness roomBusiness);
         Task<Room?> GetByIdAsync(int id);
         Task<Room?> UpdateAsync(int id, RoomBusiness roomBusiness);
+        Task<RoomBusiness> CreateAsync(RoomBusiness room);
     }
 }

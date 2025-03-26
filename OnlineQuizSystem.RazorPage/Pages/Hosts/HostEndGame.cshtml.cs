@@ -37,7 +37,8 @@ namespace OnlineQuizSystem.RazorPage.Pages.Hosts
             RoomCode = room.RoomCode;
 
             // Lấy danh sách câu trả lời trong phòng
-            var playerAnswers = await _playerAnswerService.GetAsync(roomId);
+            var playerAnswersResult = await _playerAnswerService.GetAsync(roomId);
+            var playerAnswers = playerAnswersResult.Item1;
 
             // Tính điểm trung bình cho từng team
             var teamGroups = playerAnswers
