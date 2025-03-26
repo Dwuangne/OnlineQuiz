@@ -11,7 +11,7 @@ namespace OnlineQuiz.Service.Service.IService
 {
     public interface IPlayerAnswerService
     {
-        Task<(IEnumerable<PlayerAnswer>, int PageIndex, int TotalPages, int TotalRecords)> GetAsync(int playerId, int? pageIndex = null, int? pageSize = null);
+        Task<(IEnumerable<PlayerAnswer>, int PageIndex, int TotalPages, int TotalRecords)> GetAsync(int roomId, int? pageIndex = null, int? pageSize = null);
         Task<PlayerAnswer> InsertAsync(PlayerAnswerBusiness PlayerAnswerBusiness);
         Task<PlayerAnswer?> GetByIdAsync(int id);
     }

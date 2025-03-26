@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineQuiz.Service", "Onlin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineQuiz.Repository", "OnlineQuiz.Repository\OnlineQuiz.Repository.csproj", "{89087B77-F86A-4E0B-8800-8F213689D8CA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineQuizSystem.Blazor", "OnlineQuizSystem.Blazor\OnlineQuizSystem.Blazor.csproj", "{BF34B295-3B89-4C38-B1B2-6AF132B13080}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{89087B77-F86A-4E0B-8800-8F213689D8CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89087B77-F86A-4E0B-8800-8F213689D8CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89087B77-F86A-4E0B-8800-8F213689D8CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF34B295-3B89-4C38-B1B2-6AF132B13080}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF34B295-3B89-4C38-B1B2-6AF132B13080}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF34B295-3B89-4C38-B1B2-6AF132B13080}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF34B295-3B89-4C38-B1B2-6AF132B13080}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

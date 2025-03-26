@@ -15,9 +15,9 @@ namespace OnlineQuiz.Service.Service.IService
         Task<IEnumerable<Player>> GetAllPlayersAsync();
         Task<Player?> GetPlayerByIdAsync(int playerId);
         Task<IEnumerable<Player>> GetPlayersByRoomIdAsync(int roomId);
-        Task<Player> InsertAsync(PlayerBusiness playerBusiness); // ??i t? CreatePlayerAsync
-        Task<Player?> UpdateAsync(int id, PlayerBusiness playerBusiness); // ??i t? UpdatePlayerAsync
-        Task<Player?> DeleteAsync(int playerId); // ??i t? DeletePlayerAsync
+        Task<Player> InsertAsync(PlayerBusiness playerBusiness); 
+        Task<Player?> UpdateAsync(int id, PlayerBusiness playerBusiness); 
+        Task<Player?> DeleteAsync(int playerId); 
         Task<IEnumerable<Player>> GetPlayersByTeamCodeAsync(int teamCode);
     }
 }

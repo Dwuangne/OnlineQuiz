@@ -1,0 +1,53 @@
+﻿@page "{roomId:int}"
+@model OnlineQuizSystem.RazorPage.Pages.Hosts.HostRoomModel
+@{
+    ViewData["Title"] = "Host Room";
+}
+
+<div class="container py-4">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h1 class="h3 mb-0">Host Room</h1>
+        </div>
+        <div class="card-body">
+            <!-- Room Code -->
+            <div class="mb-4 text-center">
+                <h2>Room Code: <span class="badge bg-success">@Model.Room.RoomCode</span></h2>
+                <p class="text-muted">Share this code with players to join the room.</p>
+            </div>
+
+            <!-- Teams Section -->
+            <h3 class="mb-3">Teams</h3>
+            <div class="row">
+                @foreach (var team in Model.Teams)
+                {
+                    <div class="col-md-3 mb-4">
+                        <div class="card">
+                            <div class="card-header bg-info text-white">
+                                Team @team.Key
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-group" id="team-@team.Key-players">
+                                    @foreach (var player in team.Value)
+                                    {
+                                        <li class="list-group-item">@player.Nickname</li>
+                                    }
+                                    @for (int i = team.Value.Count; i < 5; i++)
+                                    {
+                                        <li class="list-group-item text-muted">Empty Slot</li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <!-- Start Button -->
+            <form method="post" asp-page-handler="StartQuiz" class="text-center mt-4">
+                <input type="hidden" name="roomId" value="@Model.Room.RoomId" />
+                <button type="submit" class="btn btn-success btn-lg">Start Quiz</button>
+            </form>
+        </div>
+    </div>
+</div>

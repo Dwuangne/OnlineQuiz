@@ -1,0 +1,47 @@
+﻿@page "{roomId:int}"
+@model OnlineQuizSystem.RazorPage.Pages.Hosts.HostEndGameModel
+@{
+    ViewData["Title"] = "End Game";
+}
+
+<div class="container py-4">
+    <div class="card shadow-sm">
+        <div class="card-header bg-dark text-white">
+            <h1 class="h3 mb-0">Quiz Ended</h1>
+        </div>
+        <div class="card-body">
+            <div class="text-center mb-4">
+                <h2>Game Over!</h2>
+                <p class="lead">The quiz for room <strong>@Model.RoomCode</strong> has ended.</p>
+            </div>
+
+            <!-- Team Scores Table -->
+            <h3 class="mb-3">Team Scores</h3>
+            <table class="table table-striped table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Team</th>
+                        <th>Average Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var team in Model.TeamScores.OrderBy(t => t.Key))
+                    {
+                        <tr>
+                            <td>Team @team.Key</td>
+                            <td>@team.Value.ToString("F2")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <a asp-page="Quizs/Index" class="btn btn-outline-secondary">
+                <i class="bi bi-arrow-left"></i> Back to Quizs
+            </a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+}

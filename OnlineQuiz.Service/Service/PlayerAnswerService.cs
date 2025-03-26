@@ -19,10 +19,10 @@ namespace OnlineQuiz.Service.Service
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<(IEnumerable<PlayerAnswer>, int PageIndex, int TotalPages, int TotalRecords)> GetAsync(int playerId, int? pageIndex = null, int? pageSize = null)
+        public async Task<(IEnumerable<PlayerAnswer>, int PageIndex, int TotalPages, int TotalRecords)> GetAsync(int roomId, int? pageIndex = null, int? pageSize = null)
         {
             return await _unitOfWork.PlayerAnswerRepository.GetAsync(
-                filter: p => p.PlayerId == playerId,
+                filter: p => p.QuestionInRoom.RoomId == roomId,
                 orderBy: null,
                 includeProperties: "Player",
                 pageIndex: 1,

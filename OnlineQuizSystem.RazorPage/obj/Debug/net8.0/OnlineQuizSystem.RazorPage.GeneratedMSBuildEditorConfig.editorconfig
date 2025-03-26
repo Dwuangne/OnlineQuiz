@@ -36,6 +36,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Materials_FPTU/Season_7/PRN222/OnlineQuiz/OnlineQuizSystem.RazorPage/Pages/Hosts/HostEndGame.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9zdHNcSG9zdEVuZEdhbWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Materials_FPTU/Season_7/PRN222/OnlineQuiz/OnlineQuizSystem.RazorPage/Pages/Hosts/HostQuestion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9zdHNcSG9zdFF1ZXN0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Materials_FPTU/Season_7/PRN222/OnlineQuiz/OnlineQuizSystem.RazorPage/Pages/Hosts/HostRoom.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9zdHNcSG9zdFJvb20uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Materials_FPTU/Season_7/PRN222/OnlineQuiz/OnlineQuizSystem.RazorPage/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

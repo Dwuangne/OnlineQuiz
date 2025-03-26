@@ -18,9 +18,12 @@ namespace OnlineQuizSystem.RazorPage.Mapping
 
             CreateMap<Quiz, QuizResponse>().ReverseMap();
             CreateMap<Question, QuestionResponse>().ReverseMap();
+            CreateMap<Room, RoomResponse>().ReverseMap();
+            CreateMap<Player, PlayerResponse>().ReverseMap();
 
             CreateMap<QuizRequest, QuizBusiness>().ReverseMap();
             CreateMap<QuestionRequest, QuestionBusiness>().ReverseMap();
+            CreateMap<Room, RoomBusiness>().ReverseMap();
 
         } 
     }

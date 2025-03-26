@@ -12,3 +12,17 @@ D:\Project\Assignment_PRN222\OnlineQuiz\OnlineQuiz.Repository\obj\Debug\net8.0\r
 D:\Project\Assignment_PRN222\OnlineQuiz\OnlineQuiz.Repository\obj\Debug\net8.0\OnlineQuiz.Repository.pdb
 D:\Project\Assignment_PRN222\OnlineQuiz\OnlineQuiz.Repository\obj\Debug\net8.0\OnlineQuiz.Repository.genruntimeconfig.cache
 D:\Project\Assignment_PRN222\OnlineQuiz\OnlineQuiz.Repository\obj\Debug\net8.0\ref\OnlineQuiz.Repository.dll
+D:\Materials_FPTU\Season_7\PRN222\OnlineQuiz\OnlineQuiz.Repository\bin\Debug\net8.0\OnlineQuiz.Repository.deps.json
+D:\Materials_FPTU\Season_7\PRN222\OnlineQuiz\OnlineQuiz.Repository\bin\Debug\net8.0\OnlineQuiz.Repository.runtimeconfig.json
+D:\Materials_FPTU\Season_7\PRN222\OnlineQuiz\OnlineQuiz.Repository\bin\Debug\net8.0\OnlineQuiz.Repository.dll
+D:\Materials_FPTU\Season_7\PRN222\OnlineQuiz\OnlineQuiz.Repository\bin\Debug\net8.0\OnlineQuiz.Repository.pdb
+D:\Materials_FPTU\Season_7\PRN222\OnlineQuiz\OnlineQuiz.Repository\obj\Debug\net8.0\OnlineQuiz.Repository.csproj.AssemblyReference.cache
+D:\Materials_FPTU\Season_7\PRN222\OnlineQuiz\OnlineQuiz.Repository\obj\Debug\net8.0\OnlineQuiz.Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\Materials_FPTU\Season_7\PRN222\OnlineQuiz\OnlineQuiz.Repository\obj\Debug\net8.0\OnlineQuiz.Repository.AssemblyInfoInputs.cache
+D:\Materials_FPTU\Season_7\PRN222\OnlineQuiz\OnlineQuiz.Repository\obj\Debug\net8.0\OnlineQuiz.Repository.AssemblyInfo.cs
+D:\Materials_FPTU\Season_7\PRN222\OnlineQuiz\OnlineQuiz.Repository\obj\Debug\net8.0\OnlineQuiz.Repository.csproj.CoreCompileInputs.cache
+D:\Materials_FPTU\Season_7\PRN222\OnlineQuiz\OnlineQuiz.Repository\obj\Debug\net8.0\OnlineQuiz.Repository.dll
+D:\Materials_FPTU\Season_7\PRN222\OnlineQuiz\OnlineQuiz.Repository\obj\Debug\net8.0\refint\OnlineQuiz.Repository.dll
+D:\Materials_FPTU\Season_7\PRN222\OnlineQuiz\OnlineQuiz.Repository\obj\Debug\net8.0\OnlineQuiz.Repository.pdb
+D:\Materials_FPTU\Season_7\PRN222\OnlineQuiz\OnlineQuiz.Repository\obj\Debug\net8.0\OnlineQuiz.Repository.genruntimeconfig.cache
+D:\Materials_FPTU\Season_7\PRN222\OnlineQuiz\OnlineQuiz.Repository\obj\Debug\net8.0\ref\OnlineQuiz.Repository.dll

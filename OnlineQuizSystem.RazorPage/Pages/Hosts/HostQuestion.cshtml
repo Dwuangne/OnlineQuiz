@@ -1,0 +1,97 @@
+﻿@page "{roomId:int}/{order:int?}"
+@model OnlineQuizSystem.RazorPage.Pages.Hosts.HostQuestionModel
+@{
+    ViewData["Title"] = "Host Question";
+}
+<div class="container py-4">
+    <div class="card shadow-sm">
+        <div class="card-header bg-info text-white">
+            <h1 class="h3 mb-0">Question #@Model.CurrentOrder of @Model.TotalQuestions</h1>
+        </div>
+        <div class="card-body">
+            <div class="text-center mb-4">
+                <h2>@Model.CurrentQuestion.Question.QuestionText</h2>
+                <div id="timer" class="fw-bold text-danger fs-3"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <strong>A.</strong> @Model.CurrentQuestion.Question.AnswerA
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <strong>B.</strong> @Model.CurrentQuestion.Question.AnswerB
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <strong>C.</strong> @Model.CurrentQuestion.Question.AnswerC
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <strong>D.</strong> @Model.CurrentQuestion.Question.AnswerD
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <form method="post" asp-page-handler="NextQuestion" class="text-center mt-4">
+                <input type="hidden" name="roomId" value="@Model.RoomId" />
+                <input type="hidden" name="currentOrder" value="@Model.CurrentOrder" />
+                <button type="submit" class="btn btn-primary">Next Question</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/lib/signalr/signalr.js"></script>
+    <script>
+        // Kết nối SignalR (chỉ cần cho host để kiểm tra, thực tế players sẽ kết nối)
+        const connection = new signalR.HubConnectionBuilder()
+            .withUrl("/quizHub")
+            .build();
+
+        connection.start().catch(err => console.error(err));
+
+        // Đếm ngược thời gian
+        let timeLeft = @Model.CurrentQuestion.Question.TimeLimit;
+        const timerElement = document.getElementById("timer");
+
+        if (timeLeft > 0) {
+            timerElement.textContent = `Time Left: ${timeLeft}s`;
+            const countdown = setInterval(() => {
+                timeLeft--;
+                timerElement.textContent = `Time Left: ${timeLeft}s`;
+
+                if (timeLeft <= 0) {
+                    clearInterval(countdown);
+                    // Tự động chuyển sang câu tiếp theo
+                    document.querySelector("form").submit();
+                }
+            }, 1000);
+        } else {
+            timerElement.textContent = "No time limit";
+        }
+    </script>
+
+    <style>
+        .card-body {
+            font-size: 1.1rem;
+        }
+
+        #timer {
+            margin-top: 1rem;
+        }
+    </style>
+}

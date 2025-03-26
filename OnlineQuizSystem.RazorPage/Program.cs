@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using OnlineQuiz.Repository;
+using OnlineQuiz.Repository.Entities;
 using OnlineQuiz.Repository.Repositories;
 using OnlineQuiz.Repository.UnitOfWork;
 using OnlineQuiz.Service.Service;
@@ -31,6 +32,10 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IQuizService, QuizService>();
 builder.Services.AddScoped<IQuestionService, QuestionService>();
+builder.Services.AddScoped<IPlayerAnswerService, PlayerAnswerService>();
+builder.Services.AddScoped<IPlayerService, PlayerService>();
+builder.Services.AddScoped<IQuestionInRoomService, QuestionInRoomService>();
+builder.Services.AddScoped<IRoomService, RoomService>();
 
 var app = builder.Build();
 
