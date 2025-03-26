@@ -1,0 +1,60 @@
+﻿@page
+@model OnlineQuizSystem.RazorPage.Pages.Room.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Room</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Room.RoomId" />
+            <div class="form-group">
+                <label asp-for="Room.QuizId" class="control-label"></label>
+                <select asp-for="Room.QuizId" class="form-control" asp-items="ViewBag.QuizId"></select>
+                <span asp-validation-for="Room.QuizId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Room.HostId" class="control-label"></label>
+                <select asp-for="Room.HostId" class="form-control" asp-items="ViewBag.HostId"></select>
+                <span asp-validation-for="Room.HostId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Room.RoomCode" class="control-label"></label>
+                <input asp-for="Room.RoomCode" class="form-control" />
+                <span asp-validation-for="Room.RoomCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Room.IsActive" class="control-label"></label>
+                <input asp-for="Room.IsActive" class="form-control" />
+                <span asp-validation-for="Room.IsActive" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Room.StartedAt" class="control-label"></label>
+                <input asp-for="Room.StartedAt" class="form-control" />
+                <span asp-validation-for="Room.StartedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Room.EndedAt" class="control-label"></label>
+                <input asp-for="Room.EndedAt" class="form-control" />
+                <span asp-validation-for="Room.EndedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

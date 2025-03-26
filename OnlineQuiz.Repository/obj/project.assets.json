@@ -4734,23 +4734,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tquan\\.nuget\\packages\\": {},
+    "C:\\Users\\ADMIN\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Materials_FPTU\\Season_7\\PRN222\\OnlineQuiz\\OnlineQuiz.Repository\\OnlineQuiz.Repository.csproj",
+      "projectUniqueName": "F:\\ki7\\PRN222\\final2\\OnlineQuiz\\OnlineQuiz.Repository\\OnlineQuiz.Repository.csproj",
       "projectName": "OnlineQuiz.Repository",
-      "projectPath": "D:\\Materials_FPTU\\Season_7\\PRN222\\OnlineQuiz\\OnlineQuiz.Repository\\OnlineQuiz.Repository.csproj",
-      "packagesPath": "C:\\Users\\tquan\\.nuget\\packages\\",
-      "outputPath": "D:\\Materials_FPTU\\Season_7\\PRN222\\OnlineQuiz\\OnlineQuiz.Repository\\obj\\",
+      "projectPath": "F:\\ki7\\PRN222\\final2\\OnlineQuiz\\OnlineQuiz.Repository\\OnlineQuiz.Repository.csproj",
+      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+      "outputPath": "F:\\ki7\\PRN222\\final2\\OnlineQuiz\\OnlineQuiz.Repository\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\tquan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4759,6 +4759,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -4775,7 +4776,7 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "all"
+        "auditMode": "direct"
       },
       "SdkAnalysisLevel": "9.0.100"
     },
@@ -4816,7 +4817,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

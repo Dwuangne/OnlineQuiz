@@ -1,0 +1,63 @@
+﻿@page
+@model OnlineQuizSystem.RazorPage.Pages.Room.CreateModel
+
+@{
+    ViewData["Title"] = "Create Room";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm rounded-5 border-0" style="background-color: #f8f9fa;">
+                <div class="card-header text-center rounded-top-5" style="background-color: #6c757d; color: white;">
+                    <h3 class="mb-0">Create New Room</h3>
+                </div>
+                <div class="card-body p-4">
+                    <form method="post">
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger rounded-4"></div>
+
+                        <div class="mb-3">
+                            <label asp-for="Room.QuizId" class="form-label fw-semibold">Select Quiz</label>
+                            <select asp-for="Room.QuizId" class="form-control rounded-4 shadow-sm" asp-items="ViewBag.QuizId"></select>
+                            <span asp-validation-for="Room.QuizId" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Room.HostId" class="form-label fw-semibold">Select Host</label>
+                            <select asp-for="Room.HostId" class="form-control rounded-4 shadow-sm" asp-items="ViewBag.HostId"></select>
+                            <span asp-validation-for="Room.HostId" class="text-danger"></span>
+                        </div>
+
+                     
+
+                        <div class="mb-3">
+                            <label asp-for="Room.StartedAt" class="form-label fw-semibold">Start Time</label>
+                            <input asp-for="Room.StartedAt" type="datetime-local" class="form-control rounded-4 shadow-sm" />
+                            <span asp-validation-for="Room.StartedAt" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Room.EndedAt" class="form-label fw-semibold">End Time</label>
+                            <input asp-for="Room.EndedAt" type="datetime-local" class="form-control rounded-4 shadow-sm" />
+                            <span asp-validation-for="Room.EndedAt" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn text-white rounded-4 py-2" style="background-color: #5cb85c;">Create Room</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="text-center mt-3">
+                <a asp-page="Index" class="btn rounded-4 px-4 py-2" style="background-color: #dee2e6; color: #495057;">Back to List</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
